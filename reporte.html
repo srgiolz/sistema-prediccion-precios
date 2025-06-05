@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Predicción</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        h1 { color: #2E86C1; }
+        .section { margin-bottom: 20px; }
+        .key-metrics span { font-weight: bold; }
+        .alerta { font-size: 18px; padding: 10px; border-radius: 5px; }
+        .sube { background-color: #f8d7da; color: #721c24; }
+        .baja { background-color: #d4edda; color: #155724; }
+        .estable { background-color: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+
+    <h1>Reporte de Predicción de Precios</h1>
+
+    <div class="section">
+        <p><strong>Producto:</strong> {{ producto }}</p>
+        <p><strong>Fecha del reporte:</strong> {{ fecha }}</p>
+    </div>
+
+    <div class="section key-metrics">
+        <p><span>Precio Promedio:</span> {{ promedio }} Bs</p>
+        <p><span>Precio Actual:</span> {{ actual }} Bs</p>
+        <p><span>Precio Predicho (3 meses):</span> {{ predicho }} Bs</p>
+        <p><span>Variación Esperada:</span> {{ variacion }}%</p>
+    </div>
+
+    <div class="section alerta {{ estilo }}">
+        <p><strong>Recomendación:</strong> {{ mensaje }}</p>
+    </div>
+
+    <div class="section">
+        <h2>📈 Gráfico Histórico</h2>
+        <img src="{{ grafico1 }}" width="600">
+
+        <h2>🔮 Gráfico de Predicción</h2>
+        <img src="{{ grafico2 }}" width="600">
+    </div>
+
+</body>
+</html>
